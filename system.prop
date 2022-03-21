@@ -1,0 +1,188 @@
+#
+# from device/xiaomi/evergreen/special_ro.prop
+#
+# 5g capability(0: not support 1:nsa 2:sa 3: 1+2)
+ro.vendor.radio.5g=3
+
+
+#
+# from device/mediatek/system/common/system.prop
+#
+ro.product.property_source_order=odm,vendor,product,system
+
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+
+
+wifi.interface=wlan0
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+mediatek.wlan.ctia=0
+
+
+#
+wifi.tethering.interface=ap0
+#
+
+ro.opengles.version=196610
+# ro.kernel.qemu=1
+# ro.kernel.qemu.gles=0
+
+wifi.direct.interface=p2p0
+#dalvik.vm.heapgrowthlimit=256m
+#dalvik.vm.heapsize=512m
+
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+
+ro.sys.usb.storage.type=mtp
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+ro.zygote.preload.enable=0
+
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=0
+
+ro.kernel.zio=38,108,105,16
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=0
+#ro.boot.selinux=disable
+
+# Disable dirty region for Mali
+#debug.hwui.render_dirty_regions=false
+
+
+# performance
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
+# disable ipo for development
+sys.ipo.disable=1
+
+# identity
+Build.BRAND=MTK
+
+# Disable iorapd
+ro.iorapd.enable=false
+
+#ExtB HONGMI-84779,jiiyanan.wt,Add,20210616,not support DBS
+ro.hardware.wlan.dbs=0
+
+# end of device/mediatek/system/common/system.prop
+
+#
+# from device/xiaomi/evergreen/system.prop
+#
+#
+# system.prop for generic sdk
+#
+
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+
+
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+
+
+#
+wifi.tethering.interface=ap0
+#
+
+ro.opengles.version=196610
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=0
+
+wifi.direct.interface=p2p0
+#dalvik.vm.heapgrowthlimit=256m
+#dalvik.vm.heapsize=512m
+
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+
+ro.sys.usb.storage.type=mtp
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+ro.zygote.preload.enable=0
+
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=0
+
+ro.kernel.zio=38,108,105,16
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=0
+#ro.boot.selinux=disable
+
+# Disable dirty region for Mali
+#debug.hwui.render_dirty_regions=false
+
+ro.sf.lcd_density=440
+
+# performance
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+#+ExtB HONGMI-88635, fanhonggen.wt, ADD, 20210802, for support SE type
+ro.vendor.se.type=HCE,UICC
+#-ExtB HONGMI-88635, fanhonggen.wt, ADD, 20210802, for support SE type
+
+#+ExtB HONGMI-87024, fangxianpeng.wt, ADD, 20210707, for battery charging off if CALL_STATE_OFFHOOK
+persist.sys.chgdisabled=0
+#-ExtB HONGMI-87024, fangxianpeng.wt, ADD, 20210707, for battery charging off if CALL_STATE_OFFHOOK
+# +ExtR HONGMI-85024, zhangwang.wt, add, 20210528, for display performance
+# property to latch unsignaled buffer
+vendor.debug.sf.latch_unsignaled=1
+# +ExtR HONGMI-85024, zhangwang.wt, add, 20210528, for display performance
+
+# +HONGMI-84746 liuli add for subsystem ramdump req 2021-6-23
+persist.sys.mdlog_dumpback=2
+persist.vendor.mdlog.need_dump=1
+# -HONGMI-84746 liuli add for subsystem ramdump req 2021-6-23
+
+#BSP.display max nits
+persist.vendor.max.brightness=520
+
+#button jack mode & switch
+persist.vendor.audio.button_jack.profile=volume
+persist.vendor.audio.button_jack.switch=0
+
+#fix call recording mute
+vendor.audiohal.telephonytx.type=2
+# end of device/xiaomi/evergreen/system.prop
+
+#
